@@ -1,0 +1,40 @@
+#admin{
+    .admin{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-top: 150px;
+        h2{
+            color: #46A358;
+            font-size: 33px;
+        }
+        input{
+            padding: 10px 22px;
+            border-radius: 10px;
+            color: black;
+            border: 3px solid grey;
+            font-size: 20px;
+            outline: none;
+            transition: 0.4s;
+            &:hover{
+                &::placeholder{
+                    color: #46A358
+                }
+                border: 3px solid #46A358;
+                transform: scale(1.08);
+            }
+        }
+        button{
+            padding: 10px 40px;
+            font-size: 22px;
+            color: white;
+            background-color: #46A358;
+            border-radius: 10px;
+            transition: 0.4s;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
