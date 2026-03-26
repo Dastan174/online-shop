@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-export interface ICartProduct {
+export interface CartProduct {
   id: number;
   title: string;
   price: number;
@@ -9,10 +9,10 @@ export interface ICartProduct {
 }
 
 interface CartStore {
-  cart: ICartProduct[];
-  addToCart: (item: ICartProduct) => void;
-  removeFromCart: (id: number) => void;
-  clearCart: () => void;
+  cart: CartProduct[];
+  addToCart: (item: CartProduct) => Promise<void>;
+  removeFromCart: (id: number) => Promise<void>;
+  clearCart: () => Promise<void>;
 }
 
 export const useCart = create<CartStore>()(
@@ -20,17 +20,21 @@ export const useCart = create<CartStore>()(
     (set) => ({
       cart: [],
 
-      addToCart: (item) =>
+      addToCart: async (item: CartProduct): Promise<void> => {
         set((state) => ({
           cart: [...state.cart, item],
-        })),
+        }));
+      },
 
-      removeFromCart: (id) =>
+      removeFromCart: async (id: number): Promise<void> => {
         set((state) => ({
           cart: state.cart.filter((p) => p.id !== id),
-        })),
+        }));
+      },
 
-      clearCart: () => set({ cart: [] }),
+      clearCart: async (): Promise<void> => {
+        set({ cart: [] });
+      },
     }),
     { name: "cart" }
   )
