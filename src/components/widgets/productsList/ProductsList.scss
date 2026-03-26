@@ -1,0 +1,9 @@
+#products-list {
+  padding-block: 50px;
+  .products-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 20px 0;
+  }
+}
