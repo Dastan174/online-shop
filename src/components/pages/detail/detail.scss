@@ -45,35 +45,78 @@ color: #727272;
             }
            }
            .btns{
+            .counter{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .increment{
             display: flex;
-            gap: 20px;
-            button{
-                transition: 0.4s;
-                &:hover{
+            align-items: center;
+            justify-content: center;
+            width: 21px;
+height: 25px;
+border-radius: 29px;
+background-color: #46A358;
+color: white;
+font-weight: 400;
+font-size: 20px;
+        }
+        .decrement{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 21px;
+height: 25px;
+border-radius: 29px;
+background-color: #46A358;
+color: white;
+font-weight: 400;
+font-size: 20px;
+        }
+        p{
+font-weight: 400;
+font-size: 17px;
+color: #3D3D3D;
+        }
+    }
+    .buy{
+
+        background: #46A358;
+        width: 130px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 40px;
+    border-radius: 6px
+    ;
+    color: white;
+    &:hover{
                     transform: scale(1.08);
                 }
-                &:last-child{
-                    border: 2px solid #46A358;
-                    width: 130px;
-height: 40px;
-border-radius: 6px;
-border-width: 1px;
-color: #46A358;
-background-color: white;
-font-weight: 700;
-font-size: 14px;
+    }
+    .add{
+
+        border: 2px solid #46A358;
+        width: 130px;
+    height: 40px;
+    border-radius: 6px;
+    border-width: 1px;
+    color: #46A358;
+    background-color: white;
+    font-weight: 700;
+    font-size: 14px;
+    &:hover{
+                    transform: scale(1.08);
                 }
+    }
+            display: flex;
+            gap: 20px;
+                transition: 0.4s;
+                
                 &:first-child{
-                    width: 130px;
-font-weight: 700;
-font-size: 14px;
-height: 40px;
-border-radius: 6px;
-color: white;
-background-color: #46A358;
+                }
+                &:last-child{
                 }
             }
            }
         }
     }
-}

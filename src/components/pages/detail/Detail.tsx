@@ -25,8 +25,13 @@ const Detail = () => {
                         </p>
                         </div>
                         <div className="btns">
-                            <button>Buy Now</button>
-                            <button>Add To Cart</button>
+                            <div className="counter">
+                                <button className='increment'>-</button>
+                                <p>1</p>
+                                <button className='decrement'>+</button>
+                            </div>
+                            <button className='buy'>Buy Now</button>
+                            <button className='add'>Add To Cart</button>
                         </div>
                     </div>
                 </div>
