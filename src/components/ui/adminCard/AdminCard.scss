@@ -1,0 +1,97 @@
+.admin-card {
+  width: 500px;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 20px 20px 16px 20px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.admin-card-top {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.admin-card-image {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.admin-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-card-info h4 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+}
+
+.admin-card-price {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #111;
+}
+
+.admin-card-description {
+  margin: 0;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.admin-card-line {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 0 0 14px 0;
+}
+
+.admin-card-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.action-btn {
+  padding: 7px 18px;
+  font-size: 14px;
+  font-weight: 400;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 10px;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.delete-btn:hover {
+  background: #fff0f0;
+  border-color: #d93d3d;
+  color: #d93d3d;
+}
+
+.edit-btn:hover {
+  background: #f0f5ff;
+  border-color: #3777d6;
+  color: #3777d6;
+}
+
+.detail-btn:hover {
+  background: #f6f6f6;
+}

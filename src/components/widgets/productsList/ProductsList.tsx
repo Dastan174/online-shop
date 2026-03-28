@@ -1,4 +1,3 @@
-import React from "react";
 import ProductCard from "../../productCard/ProductCard";
 import type { Product } from "../../productCard/ProductCard";
 import "./ProductsList.scss";
