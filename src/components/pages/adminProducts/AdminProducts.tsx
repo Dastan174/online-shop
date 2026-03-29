@@ -25,21 +25,18 @@ const DEFAULT_PRODUCTS: Admin[] = [
 const STORAGE_KEY = "adminProducts";
 
 const AdminProducts: React.FC = () => {
-  const [products, setProducts] = useState<Admin[]>([]);
-  const navigate = useNavigate();
-
-  useEffect(() => {
+  const [products, setProducts] = useState<Admin[]>(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       try {
-        setProducts(JSON.parse(saved));
+        return JSON.parse(saved) as Admin[];
       } catch {
-        setProducts(DEFAULT_PRODUCTS);
+        return DEFAULT_PRODUCTS;
       }
-    } else {
-      setProducts(DEFAULT_PRODUCTS);
     }
-  }, []);
+    return DEFAULT_PRODUCTS;
+  });
+  const navigate = useNavigate();
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(products));

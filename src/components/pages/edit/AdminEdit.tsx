@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { Admin } from "../../ui/adminCard/AdminCard";
 import "./AdminEdit.scss";
@@ -10,25 +10,27 @@ const AdminEdit: React.FC = () => {
   const navigate = useNavigate();
   const productFromNav = location.state as Admin | undefined;
 
-  const [product, setProduct] = useState<Admin>({
-    id: 0,
-    name: "",
-    price: 0,
-    image: "",
-    description: "",
-  });
+  const [product, setProduct] = useState<Admin>(() => {
+    if (productFromNav) return productFromNav;
 
-  useEffect(() => {
-    if (productFromNav) {
-      setProduct(productFromNav);
-    } else {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
         const parsed = JSON.parse(saved) as Admin[];
-        if (parsed.length > 0) setProduct(parsed[0]);
+        if (parsed.length > 0) return parsed[0];
+      } catch {
+        // ignore malformed data and continue with default
       }
     }
-  }, [productFromNav]);
+
+    return {
+      id: 0,
+      name: "",
+      price: 0,
+      image: "",
+      description: "",
+    };
+  });
 
   const handleChange = (field: keyof Admin, value: string) => {
     setProduct((prev) => ({
