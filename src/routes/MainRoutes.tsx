@@ -6,10 +6,10 @@ import Cart from "../components/pages/cart/Cart";
 
 const MainRoutes = () => {
   const routes = [
-    { link: "/", element: <Home/> },
-    { link: "/admin", element: <Admin/> },
-    { link: "/detail", element: <Detail/> },
-    { link: "/cart", element: <Cart/> },
+    { link: "/", element: <Home /> },
+    { link: "/admin", element: <Admin /> },
+    { link: "/detail", element: <Detail /> },
+    { link: "/cart", element: <Cart /> },
   ];
   return (
     <Routes>
